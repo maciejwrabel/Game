@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 //git zmiana
 // 2020.04.25 - gra w kółko i krzyżyk
 /*
@@ -17,10 +18,10 @@ Zadanie J19_2 proszę rozwinąć o:
 2.       Jeżeli wszystkie pola będą zajęte i nie ma wygranej to koniec gry.
 
  */
+/*
+in the next step I will try implement Exceptions. I will aslo try to add comments.
+ */
 public class J19_2 {
-    //test
-    //test 2
-    //test 3
 
     public static void main(String[] args) {
 
@@ -30,36 +31,39 @@ public class J19_2 {
         int zawodnik = 1;
 
         while (true) {
-
+            // printing empty table [3][3]. Only zeros.
             for (int i = 0; i < 3; i++) {
                 for (int j = 0; j < 3; j++) {
                     System.out.print("  " + gra[i][j]);
                 }
                 System.out.println();
             }
+            System.out.println();
 
-            System.out.println("Podaj wsp. X - zawodnik (" + zawodnik + "): ");
-            int x = sc.nextInt();
+            try {
+                System.out.print("Podaj wsp. X - zawodnik (" + zawodnik + "): ");
+                int x = sc.nextInt();
 
-            System.out.println("Podaj wsp. Y - zawodnik (" + zawodnik + "): ");
-            int y = sc.nextInt();
+                System.out.print("Podaj wsp. Y - zawodnik (" + zawodnik + "): ");
+                int y = sc.nextInt();
 
-            // spradzenie czy pole jest zajęte, jeśli tak, to gracz traci kolejkę
-            if (gra[x][y] == 0) {
-                gra[x][y] = zawodnik;
-                if (zawodnik == 1) {
-                    zawodnik = 2;
+
+                // spradzenie czy pole jest zajęte, jeśli tak, to gracz traci kolejkę
+                if (gra[x][y] == 0) {
+                    gra[x][y] = zawodnik;
+                    if (zawodnik == 1) {
+                        zawodnik = 2;
+                    } else {
+                        zawodnik = 1;
+                    }
                 } else {
-                    zawodnik = 1;
+                    System.out.println("pole jest już zajęte, zawodnik " + zawodnik + " traci kolejkę");
+                    if (zawodnik == 1) {
+                        zawodnik = 2;
+                    } else {
+                        zawodnik = 1;
+                    }
                 }
-            } else {
-                System.out.println("pole jest już zajęte, zawodnik " + zawodnik + " traci kolejkę");
-                if (zawodnik == 1) {
-                    zawodnik = 2;
-                } else {
-                    zawodnik = 1;
-                }
-            }
 /*
             if (zawodnik == 1) {
                 zawodnik = 2;
@@ -68,6 +72,17 @@ public class J19_2 {
             }
 
  */
+            } catch (java.util.InputMismatchException execption_1) {
+                System.out.println();
+                System.out.println("Exception_1: Program przyjmuje tylko liczby od 0 do 3 (zakres tablicy 3x3)");
+                System.out.println();
+            } catch (java.lang.ArrayIndexOutOfBoundsException exception_2) {
+                System.out.println();
+                System.out.println("Exception_2: Program przyjmuje tylko liczby od 0 do 3 (zakres tablicy 3x3)");
+                System.out.println();
+            } finally {
+                sc.nextLine();
+            }
 
             //sprawdzenie czy wygrał zawodnik nr 1
 
