@@ -1,7 +1,4 @@
 import java.util.Scanner;
-
-//git zmiana
-// 2020.04.25 - gra w kółko i krzyżyk
 /*
 2020.04.28 - J19_2 - praca domowa (kółko/krzyżyk)
 Zaprojektuj grę w kółko i krzyżyk
@@ -12,14 +9,11 @@ OK Współrzędne podawane są przez podanie np.: 00, albo 11.
 
 Rozszerzenie:
 Zadanie J19_2 proszę rozwinąć o:
-
 1.       Jeżeli pole będzie zajęte to zawodnik traci kolejkę
-
 2.       Jeżeli wszystkie pola będą zajęte i nie ma wygranej to koniec gry.
 
- */
-/*
-in the next step I will try implement Exceptions. I will aslo try to add comments.
+Next step
+In the next step I will try implement Exceptions. I will aslo try to add comments.
  */
 public class J19_2 {
 
