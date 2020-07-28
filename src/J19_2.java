@@ -19,6 +19,7 @@ Zadanie J19_2 proszę rozwinąć o:
  */
 public class J19_2 {
     //test
+    //test 2
 
     public static void main(String[] args) {
 
